@@ -1158,21 +1158,24 @@ tbody tr:hover {
 }
 
 /* ========================================
-   TRADING MODAL STYLES
+   TRADING MODAL STYLES - FIXED VERSION
    ======================================== */
 .trading-modal, .trading-modal-enhanced {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 99999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 999999 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 20px !important;
     background: rgba(0, 0, 0, 0.85) !important;
     backdrop-filter: blur(15px) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
 }
 
 .trading-modal-enhanced {
@@ -1188,29 +1191,55 @@ tbody tr:hover {
     height: 100% !important;
     background: rgba(0, 0, 0, 0.85) !important;
     backdrop-filter: blur(15px) !important;
-    z-index: -1 !important;
+    z-index: 1 !important;
 }
 
 .modal-container, .modal-container-enhanced {
-    position: relative;
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    max-height: 90vh;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: scale(1);
-    opacity: 1;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative !important;
+    z-index: 2 !important;
+    width: 95% !important;
+    height: auto !important;
+    max-width: 600px !important;
+    max-height: 90vh !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-radius: 20px !important;
+    overflow-y: auto !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
 }
 
 .modal-container-enhanced {
-    max-width: 800px;
-    max-height: 95vh;
-    overflow-y: auto;
+    max-width: 800px !important;
+    max-height: 95vh !important;
+    width: 98% !important;
+}
+
+/* Modal Scrollbar Styling */
+.modal-container::-webkit-scrollbar,
+.modal-container-enhanced::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-container::-webkit-scrollbar-track,
+.modal-container-enhanced::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.modal-container::-webkit-scrollbar-thumb,
+.modal-container-enhanced::-webkit-scrollbar-thumb {
+    background: rgba(79, 195, 247, 0.7);
+    border-radius: 3px;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover,
+.modal-container-enhanced::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 195, 247, 0.9);
 }
 
 .modal-header, .modal-header-enhanced {
