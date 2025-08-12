@@ -1199,8 +1199,8 @@ tbody tr:hover {
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: scale(0.95);
-    opacity: 0;
+    transform: scale(1);
+    opacity: 1;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2107,6 +2107,255 @@ tbody tr:hover {
 
 .advanced-content {
     margin-top: 16px;
+}
+
+/* Enhanced Trading Modal Body Styles */
+.modal-body-enhanced {
+    padding: 32px;
+    overflow-y: auto;
+    max-height: calc(90vh - 120px);
+    scrollbar-width: thin;
+    scrollbar-color: #00d4aa #1e293b;
+}
+
+.modal-body-enhanced::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body-enhanced::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 3px;
+}
+
+.modal-body-enhanced::-webkit-scrollbar-thumb {
+    background: #00d4aa;
+    border-radius: 3px;
+}
+
+.modal-body-enhanced::-webkit-scrollbar-thumb:hover {
+    background: #00b894;
+}
+
+/* Direction Buttons Enhanced */
+.direction-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.direction-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #8896ab;
+    min-height: 80px;
+}
+
+.direction-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.direction-btn.buy-btn.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-color: #10b981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.direction-btn.sell-btn.active {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border-color: #ef4444;
+    color: white;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.direction-btn i {
+    font-size: 20px;
+}
+
+.direction-btn span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.direction-btn small {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Input Tabs Enhanced */
+.input-tabs {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.input-tab {
+    flex: 1;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: #8896ab;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-tab.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.input-tab:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Input Sections Enhanced */
+.input-section {
+    margin-bottom: 24px;
+}
+
+.input-group-enhanced {
+    margin-bottom: 16px;
+}
+
+.input-group-enhanced label {
+    display: block;
+    color: #8896ab;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.input-with-suffix {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-suffix input {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.input-with-suffix input:focus {
+    outline: none;
+    border-color: #00d4aa;
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.input-with-suffix .suffix {
+    position: absolute;
+    right: 16px;
+    color: #8896ab;
+    font-weight: 600;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Transaction Summary Enhanced */
+.transaction-summary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.summary-header {
+    margin-bottom: 16px;
+}
+
+.summary-header h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.summary-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.summary-row.total-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.summary-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+.summary-row span:first-child {
+    color: #8896ab;
+    font-size: 14px;
+}
+
+.summary-row span:last-child {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.summary-row.total-row span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Balance Warning */
+.balance-warning {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.balance-warning i {
+    font-size: 16px;
 }
 
 /* ========================================
