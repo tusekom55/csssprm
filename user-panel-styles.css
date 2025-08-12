@@ -1160,7 +1160,7 @@ tbody tr:hover {
 /* ========================================
    TRADING MODAL STYLES
    ======================================== */
-.trading-modal {
+.trading-modal, .trading-modal-enhanced {
     position: fixed;
     top: 0;
     left: 0;
@@ -1173,6 +1173,11 @@ tbody tr:hover {
     padding: 20px;
 }
 
+.trading-modal-enhanced {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+}
+
 .modal-overlay {
     position: absolute;
     top: 0;
@@ -1183,7 +1188,7 @@ tbody tr:hover {
     backdrop-filter: blur(15px);
 }
 
-.modal-container {
+.modal-container, .modal-container-enhanced {
     position: relative;
     width: 100%;
     height: auto;
@@ -1199,13 +1204,110 @@ tbody tr:hover {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-header {
+.modal-container-enhanced {
+    max-width: 800px;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.modal-header, .modal-header-enhanced {
     background: linear-gradient(135deg, #1e2742 0%, #2a3f5f 100%);
     padding: 20px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.modal-header-enhanced {
+    padding: 24px 32px;
+}
+
+.modal-header-enhanced .coin-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.modal-header-enhanced .coin-icon-container {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f7931a 0%, #ff8c00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(247, 147, 26, 0.3);
+    overflow: hidden;
+}
+
+.modal-header-enhanced .coin-details h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.modal-header-enhanced .coin-details span {
+    background: rgba(255, 255, 255, 0.1);
+    color: #8896ab;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal-header-enhanced .price-info {
+    text-align: right;
+}
+
+.modal-header-enhanced .current-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.modal-header-enhanced .price-change {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal-header-enhanced .price-change.positive {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.modal-header-enhanced .price-change.negative {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #8896ab;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    background: rgba(244, 67, 54, 0.2);
+    border-color: #f44336;
+    color: #f44336;
+    transform: scale(1.05);
 }
 
 .modal-title-section h2 {
